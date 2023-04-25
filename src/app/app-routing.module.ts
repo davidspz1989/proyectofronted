@@ -6,6 +6,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { NormalGuard } from './core/guards/normal/normal.guard';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -26,7 +27,13 @@ const routes: Routes = [
   {
     path:"admin",
     component:DashboardComponent,
-    pathMatch:"full"
+    pathMatch:"full",
+    children:[
+      {
+        path:"profile",
+        component:ProfileComponent
+      }
+    ]
   },
   {
     path:"user-dashboard",
@@ -38,6 +45,7 @@ const routes: Routes = [
     path:"**",
     component:LoginComponent
   }
+
 ];
 
 @NgModule({
