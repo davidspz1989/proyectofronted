@@ -28,14 +28,13 @@ const routes: Routes = [
   {
     path:"admin",
     component:DashboardComponent,
-    pathMatch:"full",
     children:[
       {
         path:"profile",
         component:ProfileComponent
       },
       {
-        path:"",
+        path:"", // notar como llama al componente
         component:WelcomeComponent
       }
     ]

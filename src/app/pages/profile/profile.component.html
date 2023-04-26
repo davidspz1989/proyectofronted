@@ -1,1 +1,52 @@
-<p>profile works!</p>
+<mat-card>
+    <h1>Detalles del perfil</h1>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div class="text-center">
+                    <img 
+                    src="../../../assets/default.jpg"
+                    class="profile-image"
+                    >
+                    <div class="mt20">Castulo David Caña Vasquez</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <table class="table text-center">
+                            <tr>
+                                <td>Nombre de Usuario</td>
+                                <td>Castulo David Caña Vasquez</td>
+                            </tr>
+                            <tr>
+                                <td>ID</td>
+                                <td>8845484</td>
+                            </tr>
+                            <tr>
+                                <td>Telefono</td>
+                                <td>699648854</td>
+                            </tr>
+                            <tr>
+                                <td>Rol</td>
+                                <td>Administrador</td>
+                            </tr>
+                            <tr>
+                                <td>Estado</td>
+                                <td>Activo</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <!--
+                NOTAR EL USO DE 'd-flex justify-content-center y m-4'
+                para poder centrar los botones 
+            -->
+            <mat-card-actions class="d-flex justify-content-center">
+                <button mat-raised-button color="primary" mr10 class="m-4">Actualizar</button>
+                <button mat-raised-button color="accent" ml70>Compartir</button>
+            </mat-card-actions>
+        </div>
+    </mat-card-content>
+</mat-card>
