@@ -7,6 +7,7 @@ import { DashboardComponent } from './pages/admin/dashboard/dashboard.component'
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { NormalGuard } from './core/guards/normal/normal.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
       {
         path:"profile",
         component:ProfileComponent
+      },
+      {
+        path:"",
+        component:WelcomeComponent
       }
     ]
   },
