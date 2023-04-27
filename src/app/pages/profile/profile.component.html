@@ -8,30 +8,30 @@
                     src="../../../assets/default.jpg"
                     class="profile-image"
                     >
-                    <div class="mt20">Castulo David Caña Vasquez</div>
+                    <div class="mt20">{{user.nombre}} {{user.apellido}}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-10 offset-md-1">
                         <table class="table text-center">
                             <tr>
                                 <td>Nombre de Usuario</td>
-                                <td>Castulo David Caña Vasquez</td>
+                                <td>{{user.nombre}}</td>
                             </tr>
                             <tr>
                                 <td>ID</td>
-                                <td>8845484</td>
+                                <td>{{user.id}}</td>
                             </tr>
                             <tr>
                                 <td>Telefono</td>
-                                <td>699648854</td>
+                                <td>{{user.telefono}}</td>
                             </tr>
                             <tr>
                                 <td>Rol</td>
-                                <td>Administrador</td>
+                                <td>{{user.authorities[0].authority}}</td>
                             </tr>
                             <tr>
                                 <td>Estado</td>
-                                <td>Activo</td>
+                                <td>{{user.enabled ? "Activo" : "Inactivo"}}</td>
                             </tr>
                         </table>
                     </div>
