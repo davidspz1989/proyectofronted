@@ -6,14 +6,16 @@
         <div class="bootstratp-wrapper">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
-                    <form action="">
+                    <form (ngSubmit)="formSubmit()">
                         <mat-form-field class="w100" appearance="outline">
                             <mat-label>Titulo</mat-label>
                             <input
                             autofocus
+                            required
                             type="text"
                             name="titulo"
                             matInput
+                            [(ngModel)]="categoria.titulo"
                             placeholder="digite el titulo de la categoria">
                         </mat-form-field>
                         <mat-form-field class="w100" appearance="outline">
@@ -21,6 +23,7 @@
                             <textarea
                             name="descripcion"
                             matInput
+                            [(ngModel)]="categoria.descripcion"
                             placeholder="digite la descripcion de la categoria"
                             rows="15"></textarea>
                         </mat-form-field>
