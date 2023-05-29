@@ -8,6 +8,7 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
 import { NormalGuard } from './core/guards/normal/normal.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
+import { ViewCategoriasComponent } from './pages/admin/view-categorias/view-categorias.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
       {
         path:"", // notar como llama al componente
         component:WelcomeComponent
+      },
+      {
+        path:"categorias",
+        component:ViewCategoriasComponent
       }
     ]
   },
