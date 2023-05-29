@@ -1,1 +1,36 @@
-<p>add-categoria works!</p>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Agregar Categoria</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="bootstratp-wrapper">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <form action="">
+                        <mat-form-field class="w100" appearance="outline">
+                            <mat-label>Titulo</mat-label>
+                            <input
+                            autofocus
+                            type="text"
+                            name="titulo"
+                            matInput
+                            placeholder="digite el titulo de la categoria">
+                        </mat-form-field>
+                        <mat-form-field class="w100" appearance="outline">
+                            <mat-label>Descripción</mat-label>
+                            <textarea
+                            name="descripcion"
+                            matInput
+                            placeholder="digite la descripcion de la categoria"
+                            rows="15"></textarea>
+                        </mat-form-field>
+                        <div class="container text-center mt15">
+                            <button mat-raised-button color="primary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    
+</mat-card>
