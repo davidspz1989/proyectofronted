@@ -1,33 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CategoriaService } from 'src/app/service/categoria/categoria.service';
+import { SweetAlert } from 'sweetalert/typings/core';
+const swal: SweetAlert = require('sweetalert');
 
 @Component({
   selector: 'app-view-categorias',
   templateUrl: './view-categorias.component.html',
   styleUrls: ['./view-categorias.component.css']
 })
-export class ViewCategoriasComponent {
+export class ViewCategoriasComponent implements OnInit {
 
-  categorias=[
-    {
-      categoriaId:1,
-      titulo:"Lenguaje de progrmacion",
-      descripcion:"Esta es una categoria de prueba"
-    },
-    {
-      categoriaId:1,
-      titulo:"Lenguaje de progrmacion",
-      descripcion:"Esta es una categoria de prueba"
-    },
-    {
-      categoriaId:1,
-      titulo:"Lenguaje de progrmacion",
-      descripcion:"Esta es una categoria de prueba"
-    },
-    {
-      categoriaId:1,
-      titulo:"Lenguaje de progrmacion",
-      descripcion:"Esta es una categoria de prueba"
-    }
-  ]
+  categorias:any=[]
 
+  constructor(private categoriaService:CategoriaService){}
+  ngOnInit(): void {
+    this.categoriaService.listarCategorias().subscribe((dato:any)=>{
+      this.categorias=dato;
+    },(error)=>{
+      console.log(error);
+      swal("Error !!", "Error al cargar categorias","error")
+      }
+    )
+  }
 }
