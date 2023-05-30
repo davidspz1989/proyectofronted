@@ -13,7 +13,7 @@ export class CategoriaService {
     return this.http.get(`${baseUrl}/categoria/`)
   }
 
-  public agregarCategorias(data:any){
-    return this.http.post(`${baseUrl}/categoria/`,data);
+  public agregarCategorias(categoria:any){
+    return this.http.post(`${baseUrl}/categoria/`,categoria);
   }
 }
