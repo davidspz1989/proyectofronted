@@ -1,0 +1,54 @@
+<mat-card class="mt10">
+    <mat-card-header>
+        <mat-card-title>Agregar nuevo examen</mat-card-title>        
+    </mat-card-header>
+    <mat-card-content>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <form>
+                    <mat-form-field class="w100" appearance="fill">
+                        <mat-label>Título</mat-label>
+                        <input 
+                        type="text"
+                        name="titulo"
+                        placeholder="Digite el titulo"
+                        matInput>
+                    </mat-form-field>
+                    <mat-form-field class="w100" appearance="fill">
+                        <mat-label>Descripción</mat-label>
+                        <textarea 
+                        rows="8"
+                        type="text"
+                        name="descripcion"
+                        placeholder="Digite la descripcion"
+                        matInput></textarea>
+                    </mat-form-field>
+
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <mat-form-field class="w100" appearance="fill">
+                                <mat-label>Puntos Máximos</mat-label>
+                                <input 
+                                type="text"
+                                name="puntosMaximos"
+                                placeholder="Digite la cantidad de puntos"
+                                matInput>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-6">
+                            <mat-form-field class="w100" appearance="fill">
+                                <mat-label>Número de preguntas</mat-label>
+                                <input 
+                                type="text"
+                                name="numeroDePreguntas"
+                                placeholder="Digite el numero preguntas"
+                                matInput>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
