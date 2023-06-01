@@ -29,7 +29,6 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {}
 
   formSubmit(){
-    console.log(this.user);
     if(this.user.username == "" || this.user.username == null){
         this.snack.open("El nombre de usuario es requerido","Aceptar",{
         duration:3000,
@@ -39,7 +38,6 @@ export class SignupComponent implements OnInit {
       return;
     }
     this.userService.añadirUsuario(this.user).subscribe((data)=>{
-      console.log("servicio añadir usuario: ",data);
       swal("Guardado !!","Usuario guradado con exito","success");     
     },(error)=>{
       console.log(error)

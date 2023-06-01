@@ -9,9 +9,7 @@ const swal: SweetAlert = require('sweetalert');
 })
 export class ViewExamenesComponent implements OnInit {
 
-  examenes:any=[
-
-  ]
+  examenes:any=[]
 
   constructor(private readonly examenService:ExamenesService){}
 
@@ -23,6 +21,45 @@ export class ViewExamenesComponent implements OnInit {
       swal("Error !!","Error al cargar los examenes","error")    
    }
    )
+  }
+
+  public eliminarExamen(examenId:any){
+    // https://sweetalert.js.org/docs/#configuration
+    swal({
+      title:"Eliminar Examen",
+      text:"¿Esta seguro de eliminar el examen?",
+      icon:"warning",
+      dangerMode:true,
+      closeOnClickOutside:false,
+      buttons:{
+        cancel:{
+          text:"Cancelar",
+          value:null,
+          visible:true,
+          className:"",
+          closeModal:true
+        },
+        confirm:{
+          text:"Eliminar",
+          value:true,
+          visible:true,
+          className:"",
+          closeModal:true
+        }
+      }
+    }).then((result)=>{
+      // NOTAR COMO SE EVALUA EL "RESULT"  A CONTRA
+      // DEL CODIGO DE EJEMPLO 
+      if(result){
+        this.examenService.eliminarExamen(examenId).subscribe((data)=>{
+          this.examenes=this.examenes.filter((examen:any)=> examen.examenId != examenId)
+          swal("Examen eliminado","El examen ha sido eliminado de la base de datos","success")
+        },(error)=>{
+          console.log(error);
+          swal("error !!","Error al eliminar el examen","error")
+        })
+      }
+    })
   }
 
 }
