@@ -5,10 +5,11 @@
     <mat-card-content>
         <div class="row">
             <div class="col-md-8 offset-md-2">
-                <form>
+                <form (ngSubmit)="agregarExamen()">
                     <mat-form-field class="w100" appearance="fill">
                         <mat-label>Título</mat-label>
                         <input
+                        required
                         [(ngModel)]="examenData.titulo" 
                         type="text"
                         name="titulo"

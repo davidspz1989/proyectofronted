@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CategoriaService } from 'src/app/service/categoria/categoria.service';
+import { ExamenesService } from 'src/app/service/examenes/examenes.service';
 import { SweetAlert } from 'sweetalert/typings/core';
 const swal: SweetAlert = require('sweetalert');
 
@@ -24,7 +26,10 @@ export class AddExamenComponent implements OnInit {
     }
   }
 
-  constructor(private readonly categoriaService:CategoriaService){}
+  constructor(
+    private readonly categoriaService:CategoriaService,
+    private readonly snack:MatSnackBar,
+    private readonly examenService:ExamenesService){}
 
 
   ngOnInit(): void {
@@ -33,6 +38,33 @@ export class AddExamenComponent implements OnInit {
     },(error)=>{
       console.log(error);
       swal("Error !!","Error al obtener datos","error")
+    }
+    )
+  }
+
+  public agregarExamen(){
+    if(this.examenData.titulo.trim() == "" || this.examenData.titulo==null){
+      this.snack.open("El titulo es requerido","",{
+        duration:3000
+      });
+      return;
+    }
+
+    this.examenService.agregarExamen(this.examenData).subscribe((data)=>{
+      swal("Examen Guardado","El examen ha sigo guardado con exito","success");
+      this.examenData={
+        titulo:"",
+        descripcion:"",
+        puntosMaximos:"",
+        numeroDePreguntas:"",
+        activo:true,
+        categoria:{
+          categoriaId:""
+        }
+      }
+    },(error)=>{
+      console.log(error);
+      swal("Error !!","Error al guardar el examen","error")
     }
     )
   }

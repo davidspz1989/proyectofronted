@@ -35,7 +35,7 @@ export class AddCategoriaComponent {
     this.categoriaService.agregarCategorias(this.categoria).subscribe((dato)=>{
       this.categoria.titulo=""
       this.categoria.descripcion=""
-      swal("Categoria Agregada !!","La categoria ha sido agregada con exito","succes")
+      swal("Categoria Agregada !!","La categoria ha sido agregada con exito","success")
     },(error)=>{
       console.log(error);
       swal("Error !","Error al guardar la categoria","error")
