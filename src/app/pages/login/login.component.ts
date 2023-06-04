@@ -34,13 +34,10 @@ export class LoginComponent implements OnInit{
       })
     }
     this.loginService.generateToken(this.loginData).subscribe((data:any)=>{
-      console.log(data);
       // EN ESTA PARTE DEPENDE DEL INTERCEPTOR CREADO 
       this.loginService.loginUser(data.token);
       this.loginService.getCurrentUser().subscribe((user)=>{
         this.loginService.setUser(user);
-        console.log(user);
-        console.log(this.loginService.getUser())        
         if(this.loginService.getUserRol() == "ADMIN"){
           this.router.navigate(['admin'])
           this.loginService.loginStatusSubjetc.next(true)          

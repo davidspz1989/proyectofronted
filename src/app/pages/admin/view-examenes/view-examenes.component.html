@@ -9,7 +9,10 @@
             <button mat-flat-button color="primary">Preguntas</button>
             <button mat-stroked-button color="primary" class="ml20">Puntos maximos {{e.PuntosMaximos}}</button>
             <button mat-stroked-button color="primary" class="ml20">Preguntas {{e.numeroPreguntas}}</button>
-            <button mat-flat-button color="primary" class="ml20">Actualizar</button>
+            <!-- NOTAR COMO SE USA EL [routerLink]="direccion" en lugar de routerLink="direccion" 
+                PARA MANEJAR EL id OBTENIDO
+            -->
+            <button mat-flat-button [routerLink]="'/admin/examen/'+e.examenId" color="accent" class="ml20">Actualizar</button>
             <button mat-flat-button color="primary" class="ml20">Intentos</button>
             <button mat-raised-button color="warn" class="ms-2" (click)="eliminarExamen(e.examenId)">Eliminar</button>
         </mat-card-actions>

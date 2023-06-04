@@ -7,7 +7,7 @@ import baseUrl from '../helper';
 })
 export class ExamenesService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private readonly http:HttpClient) { }
 
   public listarCuestionarios(){
     return this.http.get(`${baseUrl}/examen/`);
@@ -19,5 +19,13 @@ export class ExamenesService {
 
   public eliminarExamen(examenId:any){
     return this.http.delete(`${baseUrl}/examen/${examenId}`)
+  }
+
+  public obtenerExamen(examenId:any){
+    return this.http.get(`${baseUrl}/examen/${examenId}`)
+  }
+
+  public actualizarExamen(examen:any){
+    return this.http.put(`${baseUrl}/examen/`,examen)
   }
 }
