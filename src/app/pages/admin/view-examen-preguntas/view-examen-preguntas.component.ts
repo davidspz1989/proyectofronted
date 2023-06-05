@@ -11,19 +11,6 @@ export class ViewExamenPreguntasComponent implements OnInit {
 
   examenId=0
   titulo:any
-  pregunta:any={
-    contendio:"",
-    imagen:"",
-    opcion1:"",
-    opcion2:"",
-    opcion3:"",
-    opcion4:"",
-    respuesta:"",
-    examen:{
-      examenId:""
-    }
-  }
-
   preguntas:any=[]
 
   constructor(
@@ -36,8 +23,7 @@ export class ViewExamenPreguntasComponent implements OnInit {
     this.examenId=this.route.snapshot.params['examenId']
     this.titulo=this.route.snapshot.params['titulo']
     this.preguntaService.listarPreguntasExamen(this.examenId).subscribe((dato)=>{
-      this.pregunta=dato
-      this.preguntas.push(this.pregunta)
+      this.preguntas=dato
     },(error)=>{
       console.log(error);      
     })

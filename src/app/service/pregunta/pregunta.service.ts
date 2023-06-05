@@ -11,6 +11,6 @@ export class PreguntaService {
 
 
   public listarPreguntasExamen(examenId:any){
-    return this.http.get(`${baseUrl}/pregunta/${examenId}`)
+    return this.http.get(`${baseUrl}/pregunta/examen/todos/${examenId}`)
   }
 }
